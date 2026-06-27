@@ -61,7 +61,7 @@ def migrate():
         
         print("🎓 Migrating Programmes...")
         for p_data in data.get('programmes', []):
-            prog = Programme.query.get(p_data['id'])
+            prog = db.session.get(Programme, p_data['id'])
             if not prog:
                 prog = Programme(
                     id=p_data['id'],
@@ -117,7 +117,7 @@ def migrate():
         
         print("🔑 Migrating Tokens...")
         for token_code, t_data in data.get('registration_tokens', {}).items():
-            token = RegistrationToken.query.get(token_code)
+            token = db.session.get(RegistrationToken, token_code)
             if not token:
                 token = RegistrationToken(
                     token=token_code,

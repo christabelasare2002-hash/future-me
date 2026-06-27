@@ -143,7 +143,7 @@ def handle_token_verification():
     if not token_code: 
         return jsonify({"error": "Token is required"}), 400
     
-    token_info = RegistrationToken.query.get(token_code)
+    token_info = db.session.get(RegistrationToken, token_code)
     
     if not token_info: 
         return jsonify({"error": "Invalid token"}), 404
@@ -206,7 +206,7 @@ def recommend():
         return jsonify(result), 400
     
     token_code = session['authenticated_token']
-    token_info = RegistrationToken.query.get(token_code)
+    token_info = db.session.get(RegistrationToken, token_code)
     
     if token_info:
         try:
