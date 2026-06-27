@@ -117,6 +117,35 @@ def generate_assessment_token():
 
 
 
+@app.route('/api/test-email')
+def test_email():
+    secret = request.args.get('secret')
+    if secret != os.getenv('MIGRATE_SECRET', 'futureme-migrate-2026'):
+        return jsonify({"error": "Unauthorized"}), 401
+    try:
+        import smtplib
+        server = smtplib.SMTP(SMTP_SERVER, SMTP_PORT, timeout=15)
+        server.ehlo()
+        server.starttls()
+        server.ehlo()
+        server.login(SMTP_USERNAME, SMTP_PASSWORD)
+        server.quit()
+        return jsonify({
+            "success": True,
+            "smtp_server": SMTP_SERVER,
+            "smtp_port": SMTP_PORT,
+            "smtp_username": SMTP_USERNAME,
+            "message": "✅ SMTP login successful! Email should work."
+        })
+    except Exception as e:
+        return jsonify({
+            "success": False,
+            "smtp_server": SMTP_SERVER,
+            "smtp_port": SMTP_PORT,
+            "smtp_username": SMTP_USERNAME,
+            "error_type": type(e).__name__,
+            "error": str(e)
+        }), 500
 
 
 @app.route('/api/tokens/generate', methods=['POST'])
