@@ -51,7 +51,12 @@ if 'aivencloud.com' in db_host or os.getenv('DB_SSL', 'false').lower() == 'true'
 
 db.init_app(app)
 
-CORS(app, supports_credentials=True)
+CORS(app, supports_credentials=True, origins=[
+    "https://future-me-steel.vercel.app",
+    "http://localhost:5500",
+    "http://127.0.0.1:5500",
+    "http://localhost:3000",
+])
 
 
 
