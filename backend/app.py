@@ -401,9 +401,22 @@ def run_migration():
     if secret != os.getenv('MIGRATE_SECRET', 'futureme-migrate-2026'):
         return jsonify({"error": "Unauthorized"}), 401
     try:
-        from migrate_data import migrate
-        migrate()
-        return jsonify({"success": True, "message": "🎉 Migration completed successfully!"})
+        import subprocess, sys
+        result = subprocess.run(
+            [sys.executable, 'migrate_data.py'],
+            capture_output=True, text=True, timeout=90
+        )
+        if result.returncode == 0:
+            return jsonify({
+                "success": True,
+                "message": "🎉 Migration completed successfully!",
+                "output": result.stdout
+            })
+        else:
+            return jsonify({
+                "success": False,
+                "error": result.stderr or result.stdout
+            }), 500
     except Exception as e:
         return jsonify({"success": False, "error": str(e)}), 500
 
