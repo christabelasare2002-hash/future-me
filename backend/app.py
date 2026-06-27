@@ -27,7 +27,11 @@ app.config['SESSION_COOKIE_NAME'] = 'futureme_session'
 app.config['SESSION_PERMANENT'] = True
 app.config['PERMANENT_SESSION_LIFETIME'] = datetime.timedelta(days=7)
 
-app.config['SESSION_COOKIE_SAMESITE'] = 'Lax'
+if os.getenv('RENDER') or os.getenv('FLASK_ENV') == 'production':
+    app.config['SESSION_COOKIE_SAMESITE'] = 'None'
+    app.config['SESSION_COOKIE_SECURE'] = True
+else:
+    app.config['SESSION_COOKIE_SAMESITE'] = 'Lax'
 
 
 db_user = os.getenv('DB_USER', 'root')
