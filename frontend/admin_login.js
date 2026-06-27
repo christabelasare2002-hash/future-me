@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const API_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
         ? 'http://127.0.0.1:5000/api'
-        : 'https://your-production-backend-url.com/api'; // TODO: Replace with your actual hosted backend API URL
+        : 'https://futureme-backend-pdv6.onrender.com/api'; // TODO: Replace with your actual hosted backend API URL
 
     const form = document.getElementById('admin-login-form');
     const errorDiv = document.getElementById('login-error');

@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', async () => {
     const API_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
         ? 'http://127.0.0.1:5000/api'
-        : 'https://your-production-backend-url.com/api'; // TODO: Replace with your actual hosted backend API URL
+        : 'https://futureme-backend-pdv6.onrender.com/api'; // TODO: Replace with your actual hosted backend API URL
 
     const grades = ["A1", "B2", "B3", "C4", "C5", "C6", "D7", "E8", "F9"];
     const coreSubjects = ["English Language", "Core Mathematics", "Integrated Science", "Social Studies"];
