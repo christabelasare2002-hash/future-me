@@ -390,5 +390,17 @@ def export_csv():
         download_name=f'UPSA_Assessment_Report_{datetime.datetime.now().strftime("%Y%m%d")}.csv'
     )
 
+@app.route('/api/db-migrate')
+def run_migration():
+    secret = request.args.get('secret')
+    if secret != os.getenv('MIGRATE_SECRET', 'futureme-migrate-2026'):
+        return jsonify({"error": "Unauthorized"}), 401
+    try:
+        from migrate_data import migrate
+        migrate()
+        return jsonify({"success": True, "message": "🎉 Migration completed successfully!"})
+    except Exception as e:
+        return jsonify({"success": False, "error": str(e)}), 500
+
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
