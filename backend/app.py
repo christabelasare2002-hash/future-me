@@ -42,6 +42,13 @@ db_name = os.getenv('DB_NAME', 'futureme_db')
 app.config['SQLALCHEMY_DATABASE_URI'] = f"mysql+pymysql://{db_user}:{db_pass}@{db_host}/{db_name}"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
+if 'aivencloud.com' in db_host or os.getenv('DB_SSL', 'false').lower() == 'true':
+    app.config['SQLALCHEMY_ENGINE_OPTIONS'] = {
+        "connect_args": {
+            "ssl": {"ssl_mode": "REQUIRED"}
+        }
+    }
+
 db.init_app(app)
 
 CORS(app, supports_credentials=True)
