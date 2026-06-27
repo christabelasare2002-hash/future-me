@@ -7,6 +7,7 @@ import smtplib
 import io
 import csv
 import threading
+import urllib.parse
 from functools import wraps
 from flask import Flask, request, jsonify, send_file, session
 from flask_cors import CORS
@@ -35,7 +36,7 @@ else:
 
 
 db_user = os.getenv('DB_USER', 'root')
-db_pass = os.getenv('DB_PASSWORD', '')
+db_pass = urllib.parse.quote_plus(os.getenv('DB_PASSWORD', ''))
 db_host = os.getenv('DB_HOST', 'localhost')
 db_name = os.getenv('DB_NAME', 'futureme_db')
 app.config['SQLALCHEMY_DATABASE_URI'] = f"mysql+pymysql://{db_user}:{db_pass}@{db_host}/{db_name}"
@@ -234,20 +235,27 @@ def recommend():
             db.session.flush() 
 
             
-            for i, sub in enumerate(data.get('coreSubjects', [])):
-                db.session.add(AssessmentGrade(
-                    assessment_id=assessment.id,
-                    subject=sub,
-                    grade=data.get('coreGrades', [])[i],
-                    is_core=True
-                ))
-            for i, sub in enumerate(data.get('electiveSubjects', [])):
-                db.session.add(AssessmentGrade(
-                    assessment_id=assessment.id,
-                    subject=sub,
-                    grade=data.get('electiveGrades', [])[i],
-                    is_core=False
-                ))
+            core_grades = data.get('coreGrades') or []
+            core_subjects = data.get('coreSubjects') or []
+            for i, sub in enumerate(core_subjects):
+                if i < len(core_grades):
+                    db.session.add(AssessmentGrade(
+                        assessment_id=assessment.id,
+                        subject=sub,
+                        grade=core_grades[i],
+                        is_core=True
+                    ))
+            
+            elec_grades = data.get('electiveGrades') or []
+            elec_subjects = data.get('electiveSubjects') or []
+            for i, sub in enumerate(elec_subjects):
+                if i < len(elec_grades):
+                    db.session.add(AssessmentGrade(
+                        assessment_id=assessment.id,
+                        subject=sub,
+                        grade=elec_grades[i],
+                        is_core=False
+                    ))
 
             
             for status, progs in result['results'].items():

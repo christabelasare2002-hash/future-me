@@ -1,5 +1,6 @@
 import json
 import os
+import urllib.parse
 from flask import Flask
 from models import db, CareerTag, Programme, Region, District, RemedialSchool, RegistrationToken, Assessment, AssessmentResult, AssessmentGrade
 from dotenv import load_dotenv
@@ -10,7 +11,7 @@ def create_app():
     app = Flask(__name__)
     
     db_user = os.getenv('DB_USER', 'root')
-    db_pass = os.getenv('DB_PASSWORD', '')
+    db_pass = urllib.parse.quote_plus(os.getenv('DB_PASSWORD', ''))
     db_host = os.getenv('DB_HOST', 'localhost')
     db_name = os.getenv('DB_NAME', 'futureme_db')
     

@@ -72,14 +72,14 @@ def get_recommendations(user_data):
     programmes = db.get("programmes", [])
     remedial_schools = db.get("remedial_schools", {})
     
-    age = user_data.get('age', 18)
-    selected_pids = user_data.get('selectedProgrammes', [])
-    core_grades = user_data.get('coreGrades', [])
-    core_subjects = user_data.get('coreSubjects', [])
-    elective_grades = user_data.get('electiveGrades', [])
-    elective_subjects = user_data.get('electiveSubjects', [])
-    selected_interests = user_data.get('careerInterests', [])
-    user_region = user_data.get('region', 'Greater Accra')
+    age = user_data.get('age') or 18
+    selected_pids = user_data.get('selectedProgrammes') or []
+    core_grades = user_data.get('coreGrades') or []
+    core_subjects = user_data.get('coreSubjects') or []
+    elective_grades = user_data.get('electiveGrades') or []
+    elective_subjects = user_data.get('electiveSubjects') or []
+    selected_interests = user_data.get('careerInterests') or []
+    user_region = user_data.get('region') or 'Greater Accra'
     
     aggregate = calculate_aggregate(core_grades, core_subjects, elective_grades, elective_subjects)
     
