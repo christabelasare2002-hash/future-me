@@ -86,7 +86,7 @@ def send_real_email(to_email, token, name):
         Rules:
         - Each token can be used for up to 3 assessments.
         
-        Start your assessment here: http://localhost:8080
+        Start your assessment here: https://future-me-steel.vercel.app
         
         Good luck!
         The FutureMe Team
