@@ -1,0 +1,1264 @@
+{
+  "programmes": [
+    {
+      "id": "llb",
+      "name": "LLB",
+      "type": "Degree",
+      "max_aggregate": 8,
+      "career_tags": [
+        "Law & Governance",
+        "Business & Entrepreneurship"
+      ],
+      "prerequisites": [],
+      "description": "A premium degree programme offered at UPSA."
+    },
+    {
+      "id": "bsc_actuarial",
+      "name": "BSc Actuarial Science",
+      "type": "Degree",
+      "max_aggregate": 10,
+      "career_tags": [
+        "Finance & Accounting",
+        "Engineering & Technical Fields"
+      ],
+      "prerequisites": [
+        "Elective Mathematics"
+      ],
+      "description": "A premium degree programme offered at UPSA."
+    },
+    {
+      "id": "bsc_data_science",
+      "name": "BSc Data Science & Analytics",
+      "type": "Degree",
+      "max_aggregate": 10,
+      "career_tags": [
+        "Technology & Data",
+        "Artificial Intelligence"
+      ],
+      "prerequisites": [
+        "Elective Mathematics"
+      ],
+      "description": "A premium degree programme offered at UPSA."
+    },
+    {
+      "id": "bsc_accounting",
+      "name": "BSc Accounting",
+      "type": "Degree",
+      "max_aggregate": 12,
+      "career_tags": [
+        "Finance & Accounting"
+      ],
+      "prerequisites": [],
+      "description": "A premium degree programme offered at UPSA."
+    },
+    {
+      "id": "bsc_acc_finance",
+      "name": "BSc Accounting & Finance",
+      "type": "Degree",
+      "max_aggregate": 12,
+      "career_tags": [
+        "Finance & Accounting"
+      ],
+      "prerequisites": [],
+      "description": "A premium degree programme offered at UPSA."
+    },
+    {
+      "id": "bsc_bus_econ",
+      "name": "BSc Business Economics",
+      "type": "Degree",
+      "max_aggregate": 14,
+      "career_tags": [
+        "Business & Entrepreneurship",
+        "Finance & Accounting"
+      ],
+      "prerequisites": [
+        "Economics",
+        "Elective Mathematics"
+      ],
+      "description": "A premium degree programme offered at UPSA."
+    },
+    {
+      "id": "bsc_banking",
+      "name": "BSc Banking & Finance",
+      "type": "Degree",
+      "max_aggregate": 14,
+      "career_tags": [
+        "Finance & Accounting"
+      ],
+      "prerequisites": [],
+      "description": "A premium degree programme offered at UPSA."
+    },
+    {
+      "id": "bsc_it_mgmt",
+      "name": "BSc IT Management",
+      "type": "Degree",
+      "max_aggregate": 14,
+      "career_tags": [
+        "Technology & Data",
+        "Business & Entrepreneurship"
+      ],
+      "prerequisites": [],
+      "description": "A premium degree programme offered at UPSA."
+    },
+    {
+      "id": "bba",
+      "name": "BBA (Bachelor of Business Administration)",
+      "type": "Degree",
+      "max_aggregate": 16,
+      "career_tags": [
+        "Business & Entrepreneurship"
+      ],
+      "prerequisites": [],
+      "description": "A premium degree programme offered at UPSA."
+    },
+    {
+      "id": "bsc_bus_admin",
+      "name": "BSc Business Administration",
+      "type": "Degree",
+      "max_aggregate": 16,
+      "career_tags": [
+        "Business & Entrepreneurship"
+      ],
+      "prerequisites": [],
+      "description": "A premium degree programme offered at UPSA."
+    },
+    {
+      "id": "bsc_it",
+      "name": "BSc Information Technology",
+      "type": "Degree",
+      "max_aggregate": 16,
+      "career_tags": [
+        "Technology & Data",
+        "Cybersecurity"
+      ],
+      "prerequisites": [],
+      "description": "A premium degree programme offered at UPSA."
+    },
+    {
+      "id": "bsc_real_estate",
+      "name": "BSc Real Estate Management & Finance",
+      "type": "Degree",
+      "max_aggregate": 18,
+      "career_tags": [
+        "Finance & Accounting",
+        "Business & Entrepreneurship"
+      ],
+      "prerequisites": [
+        "Economics",
+        "Geography"
+      ],
+      "description": "A premium degree programme offered at UPSA."
+    },
+    {
+      "id": "ba_comm",
+      "name": "BA Communication Studies",
+      "type": "Degree",
+      "max_aggregate": 18,
+      "career_tags": [
+        "Communication & Media"
+      ],
+      "prerequisites": [],
+      "description": "A premium degree programme offered at UPSA."
+    },
+    {
+      "id": "bsc_logistics",
+      "name": "BSc Logistics & Transport Management",
+      "type": "Degree",
+      "max_aggregate": 18,
+      "career_tags": [
+        "Logistics & Supply Chain",
+        "Aviation & Transport"
+      ],
+      "prerequisites": [],
+      "description": "A premium degree programme offered at UPSA."
+    },
+    {
+      "id": "bsc_health_mgmt",
+      "name": "BSc Health Services Management",
+      "type": "Degree",
+      "max_aggregate": 18,
+      "career_tags": [
+        "Health & Social Services",
+        "Business & Entrepreneurship"
+      ],
+      "prerequisites": [],
+      "description": "A premium degree programme offered at UPSA."
+    },
+    {
+      "id": "ba_pr_mgmt",
+      "name": "BA Public Relations Management",
+      "type": "Degree",
+      "max_aggregate": 18,
+      "career_tags": [
+        "Communication & Media"
+      ],
+      "prerequisites": [],
+      "description": "A premium degree programme offered at UPSA."
+    },
+    {
+      "id": "bsc_marketing",
+      "name": "BSc Applied Marketing",
+      "type": "Degree",
+      "max_aggregate": 18,
+      "career_tags": [
+        "Business & Entrepreneurship",
+        "Communication & Media"
+      ],
+      "prerequisites": [],
+      "description": "A premium degree programme offered at UPSA."
+    },
+    {
+      "id": "dip_accounting",
+      "name": "Diploma in Accounting",
+      "type": "Diploma",
+      "max_aggregate": 30,
+      "career_tags": [
+        "Finance & Accounting"
+      ],
+      "prerequisites": [],
+      "description": "A premium diploma programme offered at UPSA."
+    },
+    {
+      "id": "dip_marketing",
+      "name": "Diploma in Marketing",
+      "type": "Diploma",
+      "max_aggregate": 30,
+      "career_tags": [
+        "Business & Entrepreneurship",
+        "Communication & Media"
+      ],
+      "prerequisites": [],
+      "description": "A premium diploma programme offered at UPSA."
+    },
+    {
+      "id": "dip_management",
+      "name": "Diploma in Management",
+      "type": "Diploma",
+      "max_aggregate": 30,
+      "career_tags": [
+        "Business & Entrepreneurship"
+      ],
+      "prerequisites": [],
+      "description": "A premium diploma programme offered at UPSA."
+    },
+    {
+      "id": "dip_pr",
+      "name": "Diploma in Public Relations",
+      "type": "Diploma",
+      "max_aggregate": 30,
+      "career_tags": [
+        "Communication & Media"
+      ],
+      "prerequisites": [],
+      "description": "A premium diploma programme offered at UPSA."
+    },
+    {
+      "id": "dip_it_management",
+      "name": "Diploma in IT Management",
+      "type": "Diploma",
+      "max_aggregate": 30,
+      "career_tags": [
+        "Technology & Data",
+        "Business & Entrepreneurship"
+      ],
+      "prerequisites": [],
+      "description": "A premium diploma programme offered at UPSA."
+    }
+  ],
+  "locations": {
+    "Greater Accra": [
+      "Accra Metropolitan",
+      "Tema Metropolitan",
+      "Ashaiman Municipal",
+      "La Dade-Kotopon Municipal",
+      "La Nkwantanang-Madina Municipal",
+      "Adenta Municipal",
+      "Ga East Municipal",
+      "Ga West Municipal",
+      "Ga South Municipal",
+      "Ga Central Municipal",
+      "Kpone Katamanso Municipal",
+      "Ningo-Prampram District",
+      "Shai Osudoku District",
+      "Ada East District",
+      "Ada West District",
+      "Ablekuma Central Municipal",
+      "Ablekuma North Municipal",
+      "Ablekuma West Municipal",
+      "Ayawaso Central Municipal",
+      "Ayawaso East Municipal",
+      "Ayawaso North Municipal",
+      "Ayawaso West Municipal",
+      "Korle Klottey Municipal",
+      "Okaikwei North Municipal",
+      "Weija-Gbawe Municipal"
+    ],
+    "Ashanti": [
+      "Kumasi Metropolitan",
+      "Obuasi Municipal",
+      "Ejisu Municipal",
+      "Asokwa Municipal",
+      "Suame Municipal",
+      "Bosomtwe District",
+      "Atwima Nwabiagya Municipal",
+      "Atwima Kwanwoma District",
+      "Sekyere South District",
+      "Sekyere Central District",
+      "Mampong Municipal",
+      "Afigya Kwabre North & South",
+      "Offinso North & South",
+      "Bekwai Municipal",
+      "Adansi North, South, Asokwa"
+    ],
+    "Western": [
+      "Sekondi-Takoradi Metropolitan",
+      "Effia-Kwesimintsim Municipal",
+      "Ahanta West Municipal",
+      "Nzema East Municipal",
+      "Ellembelle District",
+      "Jomoro Municipal",
+      "Tarkwa-Nsuaem Municipal",
+      "Wassa East District",
+      "Mpohor District",
+      "Shama District",
+      "Prestea-Huni Valley Municipal",
+      "Wassa Amenfi West, Central, East"
+    ],
+    "Western North": [
+      "Sefwi Wiawso Municipal",
+      "Bia West District",
+      "Bia East District",
+      "Juaboso District",
+      "Akontombra District",
+      "Suaman District",
+      "Bibiani-Anhwiaso-Bekwai Municipal",
+      "Aowin Municipal"
+    ],
+    "Central": [
+      "Cape Coast Metropolitan",
+      "Komenda-Edina-Eguafo-Abrem Municipal",
+      "Mfantsiman Municipal",
+      "Gomoa East & West Districts",
+      "Awutu Senya East & West",
+      "Agona East & West",
+      "Assin North, South, Central",
+      "Twifo Atti Morkwa",
+      "Upper Denkyira East & West",
+      "Abura-Asebu-Kwamankese"
+    ],
+    "Eastern": [
+      "New Juaben South & North",
+      "Akuapem North & South",
+      "Suhum Municipal",
+      "Nsawam-Adoagyiri Municipal",
+      "Birim North, South, Central",
+      "Kwahu East, West, South",
+      "Afram Plains North & South",
+      "Lower Manya Krobo",
+      "Upper Manya Krobo",
+      "Fanteakwa North & South",
+      "Denkyembour District"
+    ],
+    "Volta": [
+      "Ho Municipal",
+      "Hohoe Municipal",
+      "Keta Municipal",
+      "Ketu North & South",
+      "South Tongu, North Tongu, Central Tongu",
+      "Akatsi North & South",
+      "Adaklu District",
+      "Agotime-Ziope District",
+      "Afadzato South",
+      "Anloga District"
+    ],
+    "Oti": [
+      "Dambai (Krachi East Municipal)",
+      "Krachi West District",
+      "Krachi Nchumuru District",
+      "Nkwanta South & North",
+      "Kadjebi District",
+      "Jasikan District",
+      "Biakoye District"
+    ],
+    "Northern": [
+      "Tamale Metropolitan",
+      "Sagnarigu Municipal",
+      "Yendi Municipal",
+      "Tolon District",
+      "Kumbungu District",
+      "Saboba District",
+      "Karaga District",
+      "Gushegu Municipal",
+      "Mion District",
+      "Tatale-Sanguli District"
+    ],
+    "Savannah": [
+      "Damongo Municipal",
+      "Bole District",
+      "Sawla-Tuna-Kalba District",
+      "West Gonja Municipal",
+      "North Gonja District",
+      "East Gonja Municipal",
+      "Central Gonja District"
+    ],
+    "North East": [
+      "Nalerigu-Gambaga Municipal",
+      "Walewale (West Mamprusi)",
+      "East Mamprusi Municipal",
+      "Bunkpurugu-Nakpanduri District",
+      "Yunyoo-Nasuan District",
+      "Chereponi District"
+    ],
+    "Upper East": [
+      "Bolgatanga Municipal",
+      "Bawku Municipal",
+      "Navrongo Municipal",
+      "Kassena-Nankana West & East",
+      "Bongo District",
+      "Talensi District",
+      "Nabdam District",
+      "Garu District",
+      "Tempane District"
+    ],
+    "Upper West": [
+      "Wa Municipal",
+      "Wa East & West",
+      "Lawra Municipal",
+      "Nandom Municipal",
+      "Jirapa Municipal",
+      "Lambussie District",
+      "Sissala East & West",
+      "Daffiama-Bussie-Issa"
+    ],
+    "Bono": [
+      "Sunyani Municipal",
+      "Berekum Municipal",
+      "Dormaa East & West",
+      "Dormaa Central Municipal",
+      "Tain District",
+      "Banda District",
+      "Wenchi Municipal"
+    ],
+    "Bono East": [
+      "Techiman North & South",
+      "Kintampo North & South",
+      "Atebubu-Amantin Municipal",
+      "Pru East & West",
+      "Sene East & West",
+      "Nkoranza North & South"
+    ],
+    "Ahafo": [
+      "Goaso Municipal",
+      "Asunafo North & South",
+      "Tano North & South",
+      "Asutifi North & South"
+    ]
+  },
+  "remedial_schools": {
+    "Greater Accra": {
+      "Accra Metropolitan": [
+        "Supreme International College",
+        "Ideal College",
+        "His Majesty Academy"
+      ],
+      "Ga West Municipal": [
+        "De-Cotz Remedial School",
+        "Dasein Practical School"
+      ],
+      "Adenta Municipal": [
+        "Premodal Remedial School",
+        "Ascent College"
+      ],
+      "Ga Central Municipal": [
+        "Remdy Remedial School"
+      ]
+    },
+    "Ashanti": {
+      "Kumasi Metropolitan": [
+        "EndTime WASSCE Remedial College",
+        "Frankus Remedial College",
+        "Elite College Ghana"
+      ],
+      "Suame Municipal": [
+        "Stream Street College"
+      ],
+      "Obuasi Municipal": [
+        "Obuasi Remedial Centre"
+      ]
+    },
+    "Western": {
+      "Sekondi-Takoradi Metropolitan": [
+        "Takoradi Remedial Institute",
+        "Western Heights College"
+      ],
+      "Tarkwa-Nsuaem Municipal": [
+        "Goldfields Remedial School"
+      ]
+    },
+    "Central": {
+      "Cape Coast Metropolitan": [
+        "Mattest College",
+        "Oguaa Remedial Academy"
+      ],
+      "Awutu Senya East & West": [
+        "Ideal College (Kasoa Branch)",
+        "Step Up Academy"
+      ]
+    },
+    "Eastern": {
+      "New Juaben South & North": [
+        "Koforidua Remedial Centre",
+        "Ideal College (Koforidua)"
+      ],
+      "Akuapem North & South": [
+        "Hilltop Remedial School"
+      ]
+    },
+    "Bono": {
+      "Sunyani Municipal": [
+        "Catholic University College Remedial Programme",
+        "Sunyani Remedial Institute"
+      ]
+    },
+    "Northern": {
+      "Tamale Metropolitan": [
+        "Tamale Remedial Academy",
+        "Savannah College"
+      ]
+    },
+    "Upper East": {
+      "Bolgatanga Municipal": [
+        "Bolga Remedial Centre"
+      ]
+    },
+    "Upper West": {
+      "Wa Municipal": [
+        "Wa Remedial Institute"
+      ]
+    },
+    "Volta": {
+      "Ho Municipal": [
+        "Ho Remedial College",
+        "Victory Academy"
+      ]
+    },
+    "Oti": {
+      "Dambai (Krachi East Municipal)": [
+        "Oti Remedial Hub"
+      ]
+    }
+  },
+  "users": [
+    {
+      "token": "UPSA-YB6CRV",
+      "timestamp": "2026-04-27T22:30:32.950257",
+      "profile": {
+        "name": "Christabel Asare",
+        "email": "christabelasare2002@gmail.com",
+        "phone": "0535300614",
+        "age": 27,
+        "gender": "Female",
+        "region": "Eastern",
+        "district": "Akuapem North & South",
+        "highSchool": "Benkum Senior High",
+        "careerInterests": [
+          "Technology & Data",
+          "Hospitality & Tourism"
+        ],
+        "selectedProgrammes": [
+          "bsc_it_mgmt",
+          "bsc_real_estate",
+          "ba_pr_mgmt"
+        ],
+        "coreGrades": [
+          "E8",
+          "D7",
+          "F9",
+          "B3"
+        ],
+        "coreSubjects": [
+          "English Language",
+          "Core Mathematics",
+          "Integrated Science",
+          "Social Studies"
+        ],
+        "electiveGrades": [
+          "C6",
+          "C4",
+          "B3"
+        ],
+        "electiveSubjects": [
+          "Elective Mathematics",
+          "Geography",
+          "Government"
+        ],
+        "is_qualified": false,
+        "results": {
+          "Fully Qualified": [],
+          "Partially Qualified": [],
+          "Not Qualified": [
+            {
+              "id": "bsc_it_mgmt",
+              "name": "BSc IT Management",
+              "type": "Degree",
+              "explanation": "Requirements not met: Aggregate 31 exceeds limit of 14; Failing grade(s) in English Language, Integrated Science; Core subjects must be C6 or better for degree entry. This aligns with your interest in Technology & Data.",
+              "match_score": 1
+            },
+            {
+              "id": "bsc_real_estate",
+              "name": "BSc Real Estate Management & Finance",
+              "type": "Degree",
+              "explanation": "Requirements not met: Aggregate 31 exceeds limit of 18; Failing grade(s) in English Language, Integrated Science; Core subjects must be C6 or better for degree entry; Missing prerequisite: Economics.",
+              "match_score": 0
+            },
+            {
+              "id": "ba_pr_mgmt",
+              "name": "BA Public Relations Management",
+              "type": "Degree",
+              "explanation": "Requirements not met: Aggregate 31 exceeds limit of 18; Failing grade(s) in English Language, Integrated Science; Core subjects must be C6 or better for degree entry.",
+              "match_score": 0
+            }
+          ]
+        },
+        "fallbacks": [
+          {
+            "title": "Remedial Pathway Required",
+            "text": "You have failing grades (E8/F9) in: English Language, Integrated Science. We have identified several key remedial schools in the Eastern region to help you improve your grades."
+          },
+          {
+            "title": "Mature Students Entry",
+            "text": "As you are 25 or older, you can sit for the UPSA Mature Entrance Examinations in English, Mathematics, and Aptitude Test. This bypasses the WASSCE aggregate limit."
+          }
+        ]
+      }
+    },
+    {
+      "token": "UPSA-NMKQTA",
+      "timestamp": "2026-04-28T23:00:36.287649",
+      "profile": {
+        "name": "Christabel Asare",
+        "email": "christabelasare2002@gmail.com",
+        "phone": "0243545424",
+        "age": 20,
+        "gender": "Female",
+        "region": "Ahafo",
+        "district": "Goaso Municipal",
+        "highSchool": "Benkum Senior High",
+        "careerInterests": [
+          "Technology & Data",
+          "Communication & Media"
+        ],
+        "selectedProgrammes": [
+          "bsc_data_science",
+          "bsc_bus_econ",
+          "bsc_banking"
+        ],
+        "coreGrades": [
+          "B3",
+          "B2",
+          "C4",
+          "A1"
+        ],
+        "coreSubjects": [
+          "English Language",
+          "Core Mathematics",
+          "Integrated Science",
+          "Social Studies"
+        ],
+        "electiveGrades": [
+          "B3",
+          "A1",
+          "C4"
+        ],
+        "electiveSubjects": [
+          "Elective Mathematics",
+          "Government",
+          "Geography"
+        ],
+        "is_qualified": true,
+        "results": {
+          "Fully Qualified": [
+            {
+              "id": "bsc_banking",
+              "name": "BSc Banking & Finance",
+              "type": "Degree",
+              "explanation": "You meet the aggregate and grade requirements for this degree programme.",
+              "match_score": 0
+            }
+          ],
+          "Partially Qualified": [
+            {
+              "id": "bsc_data_science",
+              "name": "BSc Data Science & Analytics",
+              "type": "Degree",
+              "explanation": "You are qualified for a Diploma pathway in this field (Aggregate 14). This aligns with your interest in Technology & Data.",
+              "match_score": 1
+            },
+            {
+              "id": "bsc_bus_econ",
+              "name": "BSc Business Economics",
+              "type": "Degree",
+              "explanation": "You are qualified for a Diploma pathway in this field (Aggregate 14).",
+              "match_score": 0
+            }
+          ],
+          "Not Qualified": []
+        },
+        "fallbacks": []
+      }
+    },
+    {
+      "token": "UPSA-NMKQTA",
+      "timestamp": "2026-04-28T23:07:36.345368",
+      "profile": {
+        "name": "Christabel Asare",
+        "email": "christabelasare2002@gmail.com",
+        "phone": "0243545424",
+        "age": 20,
+        "gender": "Female",
+        "region": "Greater Accra",
+        "district": "La Nkwantanang-Madina Municipal",
+        "highSchool": "Benkum Senior High",
+        "careerInterests": [
+          "Technology & Data",
+          "Law & Governance"
+        ],
+        "selectedProgrammes": [
+          "bsc_data_science",
+          "bsc_bus_econ",
+          "bba"
+        ],
+        "coreGrades": [
+          "B2",
+          "B3",
+          "C4",
+          "A1"
+        ],
+        "coreSubjects": [
+          "English Language",
+          "Core Mathematics",
+          "Integrated Science",
+          "Social Studies"
+        ],
+        "electiveGrades": [
+          "B2",
+          "B3",
+          "A1"
+        ],
+        "electiveSubjects": [
+          "Elective Mathematics",
+          "Economics",
+          "Government"
+        ],
+        "is_qualified": true,
+        "results": {
+          "Fully Qualified": [
+            {
+              "id": "bsc_bus_econ",
+              "name": "BSc Business Economics",
+              "type": "Degree",
+              "explanation": "You meet the aggregate and grade requirements for this degree programme.",
+              "match_score": 0
+            },
+            {
+              "id": "bba",
+              "name": "BBA (Bachelor of Business Administration)",
+              "type": "Degree",
+              "explanation": "You meet the aggregate and grade requirements for this degree programme.",
+              "match_score": 0
+            }
+          ],
+          "Partially Qualified": [
+            {
+              "id": "bsc_data_science",
+              "name": "BSc Data Science & Analytics",
+              "type": "Degree",
+              "explanation": "You are qualified for a Diploma pathway in this field (Aggregate 12). This aligns with your interest in Technology & Data.",
+              "match_score": 1
+            }
+          ],
+          "Not Qualified": []
+        },
+        "fallbacks": []
+      }
+    },
+    {
+      "token": "UPSA-YELHKU",
+      "timestamp": "2026-04-28T23:22:03.339904",
+      "profile": {
+        "name": "Kwadwo Adu-Asare",
+        "email": "Kadu234@gmail.com",
+        "phone": "0244920809",
+        "age": 26,
+        "gender": "Male",
+        "region": "Bono East",
+        "district": "Techiman North & South",
+        "highSchool": "Kumasi Academy",
+        "careerInterests": [
+          "Business & Entrepreneurship",
+          "Finance & Accounting"
+        ],
+        "selectedProgrammes": [
+          "bsc_data_science",
+          "bsc_actuarial",
+          "bsc_acc_finance"
+        ],
+        "coreGrades": [
+          "B3",
+          "F9",
+          "C4",
+          "B2"
+        ],
+        "coreSubjects": [
+          "English Language",
+          "Core Mathematics",
+          "Integrated Science",
+          "Social Studies"
+        ],
+        "electiveGrades": [
+          "C4",
+          "B3",
+          "B3"
+        ],
+        "electiveSubjects": [
+          "Elective Mathematics",
+          "Geography",
+          "Government"
+        ],
+        "is_qualified": false,
+        "results": {
+          "Fully Qualified": [],
+          "Partially Qualified": [],
+          "Not Qualified": [
+            {
+              "id": "bsc_actuarial",
+              "name": "BSc Actuarial Science",
+              "type": "Degree",
+              "explanation": "Requirements not met: Aggregate 24 exceeds limit of 10; Failing grade(s) in Core Mathematics. This aligns with your interest in Finance & Accounting.",
+              "match_score": 1
+            },
+            {
+              "id": "bsc_data_science",
+              "name": "BSc Data Science & Analytics",
+              "type": "Degree",
+              "explanation": "Requirements not met: Aggregate 24 exceeds limit of 10; Failing grade(s) in Core Mathematics.",
+              "match_score": 0
+            },
+            {
+              "id": "bsc_acc_finance",
+              "name": "BSc Accounting & Finance",
+              "type": "Degree",
+              "explanation": "Requirements not met: Aggregate 24 exceeds limit of 12; Failing grade(s) in Core Mathematics. This aligns with your interest in Finance & Accounting.",
+              "match_score": 1
+            }
+          ]
+        },
+        "fallbacks": [
+          {
+            "title": "Remedial Pathway Required",
+            "text": "You have failing grades (E8/F9) in: Core Mathematics. In Bono East, direct remedial options are limited. We recommend checking nearby regional capitals or major hubs like Accra or Kumasi for top-tier remedial schools like Supreme International or Ideal College."
+          },
+          {
+            "title": "Mature Students Entry",
+            "text": "As you are 25 or older, you can sit for the UPSA Mature Entrance Examinations in English, Mathematics, and Aptitude Test. This bypasses the WASSCE aggregate limit."
+          }
+        ]
+      }
+    },
+    {
+      "token": "UPSA-YELHKU",
+      "timestamp": "2026-04-28T23:23:49.748856",
+      "profile": {
+        "name": "Kwadwo Adu-Asare",
+        "email": "Kadu234@gmail.com",
+        "phone": "0244920809",
+        "age": 27,
+        "gender": "Male",
+        "region": "Bono East",
+        "district": "Kintampo North & South",
+        "highSchool": "Kumasi Academy",
+        "careerInterests": [
+          "Business & Entrepreneurship",
+          "Finance & Accounting"
+        ],
+        "selectedProgrammes": [
+          "bsc_data_science",
+          "bsc_bus_econ",
+          "bba"
+        ],
+        "coreGrades": [
+          "C4",
+          "C4",
+          "E8",
+          "B3"
+        ],
+        "coreSubjects": [
+          "English Language",
+          "Core Mathematics",
+          "Integrated Science",
+          "Social Studies"
+        ],
+        "electiveGrades": [
+          "C4",
+          "B3",
+          "B2"
+        ],
+        "electiveSubjects": [
+          "Elective Mathematics",
+          "Economics",
+          "Government"
+        ],
+        "is_qualified": false,
+        "results": {
+          "Fully Qualified": [],
+          "Partially Qualified": [],
+          "Not Qualified": [
+            {
+              "id": "bsc_data_science",
+              "name": "BSc Data Science & Analytics",
+              "type": "Degree",
+              "explanation": "Requirements not met: Aggregate 20 exceeds limit of 10; Failing grade(s) in Integrated Science.",
+              "match_score": 0
+            },
+            {
+              "id": "bsc_bus_econ",
+              "name": "BSc Business Economics",
+              "type": "Degree",
+              "explanation": "Requirements not met: Aggregate 20 exceeds limit of 14; Failing grade(s) in Integrated Science. This aligns with your interest in Finance & Accounting, Business & Entrepreneurship.",
+              "match_score": 2
+            },
+            {
+              "id": "bba",
+              "name": "BBA (Bachelor of Business Administration)",
+              "type": "Degree",
+              "explanation": "Requirements not met: Aggregate 20 exceeds limit of 16; Failing grade(s) in Integrated Science. This aligns with your interest in Business & Entrepreneurship.",
+              "match_score": 1
+            }
+          ]
+        },
+        "fallbacks": [
+          {
+            "title": "Remedial Pathway Required",
+            "text": "You have failing grades (E8/F9) in: Integrated Science. In Bono East, direct remedial options are limited. We recommend checking nearby regional capitals or major hubs like Accra or Kumasi for top-tier remedial schools like Supreme International or Ideal College."
+          },
+          {
+            "title": "Mature Students Entry",
+            "text": "As you are 25 or older, you can sit for the UPSA Mature Entrance Examinations in English, Mathematics, and Aptitude Test. This bypasses the WASSCE aggregate limit."
+          }
+        ]
+      }
+    },
+    {
+      "token": "UPSA-YELHKU",
+      "timestamp": "2026-04-28T23:29:32.331147",
+      "profile": {
+        "name": "Kwadwo Adu-Asare",
+        "email": "Kadu234@gmail.com",
+        "phone": "0244920809",
+        "age": 23,
+        "gender": "Male",
+        "region": "Bono East",
+        "district": "Atebubu-Amantin Municipal",
+        "highSchool": "Kumasi Academy",
+        "careerInterests": [
+          "Business & Entrepreneurship",
+          "Finance & Accounting"
+        ],
+        "selectedProgrammes": [
+          "bsc_data_science",
+          "bsc_bus_econ",
+          "bba"
+        ],
+        "coreGrades": [
+          "B3",
+          "C4",
+          "B3",
+          "B2"
+        ],
+        "coreSubjects": [
+          "English Language",
+          "Core Mathematics",
+          "Integrated Science",
+          "Social Studies"
+        ],
+        "electiveGrades": [
+          "A1",
+          "B3",
+          "B3"
+        ],
+        "electiveSubjects": [
+          "Physics",
+          "Biology",
+          "Economics"
+        ],
+        "is_qualified": true,
+        "results": {
+          "Fully Qualified": [
+            {
+              "id": "bba",
+              "name": "BBA (Bachelor of Business Administration)",
+              "type": "Degree",
+              "explanation": "You meet the aggregate and grade requirements for this degree programme. This aligns with your interest in Business & Entrepreneurship.",
+              "match_score": 1
+            }
+          ],
+          "Partially Qualified": [
+            {
+              "id": "bsc_data_science",
+              "name": "BSc Data Science & Analytics",
+              "type": "Degree",
+              "explanation": "You are qualified for a Diploma pathway in this field (Aggregate 16).",
+              "match_score": 0
+            },
+            {
+              "id": "bsc_bus_econ",
+              "name": "BSc Business Economics",
+              "type": "Degree",
+              "explanation": "You are qualified for a Diploma pathway in this field (Aggregate 16). This aligns with your interest in Finance & Accounting, Business & Entrepreneurship.",
+              "match_score": 2
+            }
+          ],
+          "Not Qualified": []
+        },
+        "fallbacks": []
+      }
+    },
+    {
+      "token": "UPSA-38QPHL",
+      "timestamp": "2026-04-28T23:36:31.361145",
+      "profile": {
+        "name": "Irene Quainoo",
+        "email": "irene17quainoo@gmail.com",
+        "phone": "0535300614",
+        "age": 27,
+        "gender": "Female",
+        "region": "Central",
+        "district": "Komenda-Edina-Eguafo-Abrem Municipal",
+        "highSchool": "St Mary's Senior High School",
+        "careerInterests": [
+          "Finance & Accounting",
+          "Communication & Media"
+        ],
+        "selectedProgrammes": [
+          "bsc_acc_finance",
+          "bsc_accounting",
+          "bsc_banking"
+        ],
+        "coreGrades": [
+          "C4",
+          "F9",
+          "B3",
+          "B3"
+        ],
+        "coreSubjects": [
+          "English Language",
+          "Core Mathematics",
+          "Integrated Science",
+          "Social Studies"
+        ],
+        "electiveGrades": [
+          "B3",
+          "C4",
+          "B2"
+        ],
+        "electiveSubjects": [
+          "Business Management",
+          "Financial Accounting",
+          "Economics"
+        ],
+        "is_qualified": false,
+        "results": {
+          "Fully Qualified": [],
+          "Partially Qualified": [],
+          "Not Qualified": [
+            {
+              "id": "bsc_accounting",
+              "name": "BSc Accounting",
+              "type": "Degree",
+              "explanation": "Requirements not met: Aggregate 25 exceeds limit of 12; Failing grade(s) in Core Mathematics. This aligns with your interest in Finance & Accounting.",
+              "match_score": 1
+            },
+            {
+              "id": "bsc_acc_finance",
+              "name": "BSc Accounting & Finance",
+              "type": "Degree",
+              "explanation": "Requirements not met: Aggregate 25 exceeds limit of 12; Failing grade(s) in Core Mathematics. This aligns with your interest in Finance & Accounting.",
+              "match_score": 1
+            },
+            {
+              "id": "bsc_banking",
+              "name": "BSc Banking & Finance",
+              "type": "Degree",
+              "explanation": "Requirements not met: Aggregate 25 exceeds limit of 14; Failing grade(s) in Core Mathematics. This aligns with your interest in Finance & Accounting.",
+              "match_score": 1
+            }
+          ]
+        },
+        "fallbacks": [
+          {
+            "title": "Remedial Pathway Required",
+            "text": "You have failing grades (E8/F9) in: Core Mathematics. We have identified several key remedial schools in the Central region to help you improve your grades."
+          },
+          {
+            "title": "Mature Students Entry",
+            "text": "As you are 25 or older, you can sit for the UPSA Mature Entrance Examinations in English, Mathematics, and Aptitude Test. This bypasses the WASSCE aggregate limit."
+          }
+        ]
+      }
+    },
+    {
+      "token": "UPSA-O6PULI",
+      "timestamp": "2026-04-30T10:34:21.171130",
+      "profile": {
+        "name": "Samuel Nkum",
+        "email": "snkum204@gmail.com",
+        "phone": "0202477663",
+        "age": 20,
+        "gender": "Male",
+        "region": "Ashanti",
+        "district": "Kumasi Metropolitan",
+        "highSchool": "Kumasi Academy",
+        "careerInterests": [
+          "Business & Entrepreneurship",
+          "Finance & Accounting"
+        ],
+        "selectedProgrammes": [
+          "bsc_acc_finance",
+          "bsc_banking",
+          "bsc_bus_admin"
+        ],
+        "coreGrades": [
+          "A1",
+          "B2",
+          "B3",
+          "A1"
+        ],
+        "coreSubjects": [
+          "English Language",
+          "Core Mathematics",
+          "Integrated Science",
+          "Social Studies"
+        ],
+        "electiveGrades": [
+          "A1",
+          "B2",
+          "B3"
+        ],
+        "electiveSubjects": [
+          "Business Management",
+          "Financial Accounting",
+          "Costing"
+        ],
+        "is_qualified": true,
+        "results": {
+          "Fully Qualified": [
+            {
+              "id": "bsc_acc_finance",
+              "name": "BSc Accounting & Finance",
+              "type": "Degree",
+              "explanation": "You meet the aggregate and grade requirements for this degree programme. This aligns with your interest in Finance & Accounting.",
+              "match_score": 1
+            },
+            {
+              "id": "bsc_banking",
+              "name": "BSc Banking & Finance",
+              "type": "Degree",
+              "explanation": "You meet the aggregate and grade requirements for this degree programme. This aligns with your interest in Finance & Accounting.",
+              "match_score": 1
+            },
+            {
+              "id": "bsc_bus_admin",
+              "name": "BSc Business Administration",
+              "type": "Degree",
+              "explanation": "You meet the aggregate and grade requirements for this degree programme. This aligns with your interest in Business & Entrepreneurship.",
+              "match_score": 1
+            }
+          ],
+          "Partially Qualified": [],
+          "Not Qualified": []
+        },
+        "fallbacks": []
+      }
+    }
+  ],
+  "registration_tokens": {
+    "UPSA-YB6CRV": {
+      "email": "christabelasare2002@gmail.com",
+      "name": "Christabel Asare",
+      "usage_count": 1,
+      "created_at": "2026-04-27T22:26:01.771061"
+    },
+    "UPSA-69INEQ": {
+      "email": "christabelasare2002@gmail.com",
+      "name": "Christabel Asare",
+      "usage_count": 0,
+      "created_at": "2026-04-27T22:36:44.878945"
+    },
+    "UPSA-MF61NK": {
+      "email": "christabelasare2002@gmail.com",
+      "name": "Christabel Asare",
+      "usage_count": 0,
+      "created_at": "2026-04-28T22:44:05.676441"
+    },
+    "UPSA-MYLBVW": {
+      "email": "christabelasare2002@gmail.com",
+      "name": "Christabel Asare",
+      "usage_count": 0,
+      "created_at": "2026-04-28T22:52:23.352566"
+    },
+    "UPSA-6K7ZK9": {
+      "email": "christabelasare2002@gmail.com",
+      "name": "Christabel Asare",
+      "usage_count": 0,
+      "created_at": "2026-04-28T22:53:20.200190"
+    },
+    "UPSA-1Y17BY": {
+      "email": "christabelasare2002@gmail.com",
+      "name": "Christabel Asare",
+      "usage_count": 0,
+      "created_at": "2026-04-28T22:57:41.928253"
+    },
+    "UPSA-NMKQTA": {
+      "email": "christabelasare2002@gmail.com",
+      "name": "Christabel Asare",
+      "usage_count": 2,
+      "created_at": "2026-04-28T22:58:07.895807"
+    },
+    "UPSA-4QI32L": {
+      "email": "bab94@gmail.com",
+      "name": "Barbara Opokua",
+      "usage_count": 0,
+      "created_at": "2026-04-28T23:11:38.017481"
+    },
+    "UPSA-AS3W76": {
+      "email": "Kadu234@gmail.com",
+      "name": "Kwadwo Adu-Asare",
+      "usage_count": 0,
+      "created_at": "2026-04-28T23:19:19.729737"
+    },
+    "UPSA-9JDQOS": {
+      "email": "christabelasare2002@gmail.com",
+      "name": "Christabel Asare",
+      "usage_count": 0,
+      "created_at": "2026-04-28T23:19:36.810073"
+    },
+    "UPSA-YELHKU": {
+      "email": "Kadu234@gmail.com",
+      "name": "Kwadwo Adu-Asare",
+      "usage_count": 3,
+      "created_at": "2026-04-28T23:19:55.356917"
+    },
+    "UPSA-38QPHL": {
+      "email": "irene17quainoo@gmail.com",
+      "name": "Irene Quainoo",
+      "usage_count": 1,
+      "created_at": "2026-04-28T23:34:28.617466"
+    },
+    "UPSA-O6PULI": {
+      "email": "snkum204@gmail.com",
+      "name": "Samuel Nkum",
+      "usage_count": 1,
+      "created_at": "2026-04-30T10:30:47.883304"
+    }
+  }
+}

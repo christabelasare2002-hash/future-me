@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FutureMe Admin - Analytics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body { background: #f1f5f9; padding-top: 0; }
+        .admin-sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 280px;
+            background: #0f172a;
+            color: white;
+            padding: 2rem;
+            z-index: 100;
+        }
+        .admin-main {
+            margin-left: 280px;
+            padding: 3rem;
+        }
+        .nav-item {
+            padding: 1rem;
+            border-radius: 12px;
+            cursor: pointer;
+            margin-bottom: 0.5rem;
+            color: #94a3b8;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        .nav-item:hover, .nav-item.active {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+        .metric-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-soft);
+        }
+        .metric-value {
+            font-size: 2rem;
+            font-weight: 800;
+            font-family: 'Outfit';
+        }
+        table { width: 100%; border-collapse: collapse; margin-top: 2rem; }
+        th { text-align: left; padding: 1rem; color: var(--secondary); font-size: 0.8rem; text-transform: uppercase; border-bottom: 1px solid #e2e8f0; }
+        td { padding: 1rem; border-bottom: 1px solid #f1f5f9; font-size: 0.9rem; }
+        .status-pill { padding: 0.25rem 0.75rem; border-radius: 50px; font-size: 0.75rem; font-weight: 800; }
+    </style>
+</head>
+<body>
+    
+    <div class="admin-sidebar">
+        <h2 style="margin-bottom: 3rem;"><span class="logo-accent">Future</span>Me</h2>
+        <div class="nav-item active" id="nav-dashboard">Dashboard</div>
+        <div class="nav-item" id="nav-users">User Explorer</div>
+        <div style="position: absolute; bottom: 2rem; left: 2rem; right: 2rem;">
+            <a href="index.html" class="nav-item" style="display: block; text-decoration: none; text-align: center; color: #ef4444;">Exit Admin</a>
+        </div>
+    </div>
+
+    <main class="admin-main">
+        <header style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3rem;">
+            <h1 id="page-title">Analytics Overview</h1>
+            <button id="generate-report-btn" class="nav-cta" style="border: none; cursor: pointer; outline: none;">Generate Master Report</button>
+        </header>
+
+        
+        <div id="sec-dashboard" class="fade-in">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 3rem;">
+                <div class="metric-card">
+                    <div style="font-size: 0.75rem; font-weight: 700; color: var(--secondary); margin-bottom: 0.5rem;">TOTAL USERS</div>
+                    <div class="metric-value" id="m-total">0</div>
+                </div>
+                <div class="metric-card">
+                    <div style="font-size: 0.75rem; font-weight: 700; color: var(--secondary); margin-bottom: 0.5rem;">QUALIFIED</div>
+                    <div class="metric-value" id="m-qualified" style="color: var(--success);">0</div>
+                </div>
+                <div class="metric-card">
+                    <div style="font-size: 0.75rem; font-weight: 700; color: var(--secondary); margin-bottom: 0.5rem;">DIPLOMA PATHS</div>
+                    <div class="metric-value" id="m-diploma" style="color: var(--accent);">0</div>
+                </div>
+                <div class="metric-card">
+                    <div style="font-size: 0.75rem; font-weight: 700; color: var(--secondary); margin-bottom: 0.5rem;">REMEDIALS</div>
+                    <div class="metric-value" id="m-remedial" style="color: var(--warning);">0</div>
+                </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                <div class="card" style="padding: 2rem;">
+                    <h3 style="margin-bottom: 1.5rem;">Demographics</h3>
+                    <div id="demo-list"></div>
+                </div>
+                <div class="card" style="padding: 2rem;">
+                    <h3 style="margin-bottom: 1.5rem;">Top Programme Interests</h3>
+                    <div id="progs-list"></div>
+                </div>
+            </div>
+            
+            
+            <div class="card" style="margin-top: 3rem; padding: 2rem; border: 2px dashed #e2e8f0; background: transparent; text-align: center;">
+                <h3 style="margin-bottom: 1rem;">Admin Reports</h3>
+                <p style="color: var(--secondary); margin-bottom: 2rem;">Export all student assessments, grades, and programme matches into a comprehensive CSV report.</p>
+                <button id="dashboard-report-btn" class="primary-btn">Generate & Download Detailed Report</button>
+            </div>
+        </div>
+
+        
+        <div id="sec-users" class="hidden fade-in">
+            <div class="card" style="padding: 0; overflow: hidden;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Applicant</th>
+                            <th>Email</th>
+                            <th>Region</th>
+                            <th>Grades</th>
+                            <th>Programmes</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="users-tbody"></tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <script src="admin.js"></script>
+</body>
+</html>

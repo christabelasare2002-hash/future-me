@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FutureMe - Assessment Tool</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar glass">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo"><span class="logo-accent">Future</span>Me</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="https://upsa.edu.gh/programmes/" target="_blank">Programmes</a>
+                <a href="tool.html" class="active">Assessment</a>
+                <a href="simulator.html">Simulator</a>
+                <span id="user-display" class="user-greeting hidden"></span>
+                <a href="#" id="logout-link" class="logout-tab hidden">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="landing-hero" style="padding-bottom: 8rem;">
+        <div class="nav-container">
+            <h1 class="landing-title">Programme Assessment</h1>
+            <p class="landing-subtitle">Complete your academic profile to discover the best UPSA programmes for your
+                future.</p>
+        </div>
+    </section>
+
+    <div class="app-container">
+
+        
+        <div id="form-section" class="card fade-in">
+            <div style="display: flex; justify-content: flex-end; margin-bottom: 2rem;">
+                <button type="button" class="secondary-btn exit-btn"
+                    style="padding: 0.5rem 1rem; font-size: 0.8rem; background: #fff1f2; color: #e11d48; border-color: #fecaca;">Exit
+                    Assessment</button>
+            </div>
+
+            <div class="progress-container">
+                <div class="progress-bar" id="progress-bar" style="width: 25%;"></div>
+            </div>
+            <div class="progress-steps" style="margin-bottom: 3rem;">
+                <span class="step-label active">Profile</span>
+                <span class="step-label">Programmes</span>
+                <span class="step-label">Education</span>
+                <span class="step-label">Grades</span>
+            </div>
+
+            <form id="grade-form">
+                
+                <div id="step-1" class="form-step">
+                    <h2>Personal Profile</h2>
+                    <div class="form-group row">
+                        <div>
+                            <label>Full Name</label>
+                            <input type="text" id="applicant-name" readonly style="opacity: 0.7;">
+                        </div>
+                        <div>
+                            <label>Email Address</label>
+                            <input type="email" id="applicant-email" readonly style="opacity: 0.7;">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div>
+                            <label>Phone Number</label>
+                            <input type="tel" id="applicant-phone" placeholder="0241234567" inputmode="numeric" minlength="10" maxlength="10" pattern="[0-9]{10}" required>
+                        </div>
+                        <div>
+                            <label>Gender</label>
+                            <select id="applicant-gender" required>
+                                <option value="" disabled selected>Select Gender</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Date of Birth</label>
+                        <div class="dob-group">
+                            <select id="dob-day" required>
+                                <option value="" disabled selected>Day</option>
+                            </select>
+                            <select id="dob-month" required>
+                                <option value="" disabled selected>Month</option>
+                            </select>
+                            <select id="dob-year" required>
+                                <option value="" disabled selected>Year</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div style="display: flex; justify-content: flex-end;">
+                        <button type="button" class="primary-btn next-step-btn" data-next="2">Continue</button>
+                    </div>
+                </div>
+
+                
+                <div id="step-2" class="form-step hidden">
+                    <h2>Select 3 Programmes</h2>
+                    <p class="secondary" style="margin-bottom: 2rem;">Choose three programmes you are interested in for
+                        a detailed evaluation.</p>
+                    <div class="programme-selection-grid" id="programme-selection-grid"></div>
+                    <div id="selection-counter" style="margin-top: 1.5rem; font-weight: 700; color: var(--accent);">
+                        Selected: <span id="selected-count">0</span> / 3
+                    </div>
+                    <div style="display: flex; justify-content: space-between; margin-top: 3rem;">
+                        <button type="button" class="secondary-btn prev-step-btn" data-prev="1">Back</button>
+                        <button type="button" class="primary-btn next-step-btn" id="step-2-next" data-next="3"
+                            disabled>Continue</button>
+                    </div>
+                </div>
+
+                
+                <div id="step-3" class="form-step hidden">
+                    <h2>Education & Interests</h2>
+                    <div class="form-group row">
+                        <div>
+                            <label>Residence Region</label>
+                            <select id="applicant-region" required>
+                                <option value="" disabled selected>Select Region</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label>Residence District</label>
+                            <select id="applicant-district" required disabled>
+                                <option value="" disabled selected>Select District</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>High School Name</label>
+                        <input type="text" id="high-school" placeholder="E.g. Achimota School" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Career Interests (Select all that apply)</label>
+                        <div id="career-interests-grid"
+                            style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; background: #f8fafc; padding: 1.5rem; border-radius: 14px; border: 1px solid #e2e8f0;">
+                            
+                        </div>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; margin-top: 3rem;">
+                        <button type="button" class="secondary-btn prev-step-btn" data-prev="2">Back</button>
+                        <button type="button" class="primary-btn next-step-btn" data-next="4">Continue</button>
+                    </div>
+                </div>
+
+                
+                <div id="step-4" class="form-step hidden">
+                    <h2>Academic Results</h2>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                        <div>
+                            <h3 style="font-size: 1.1rem; margin-bottom: 1rem;">Core Subjects</h3>
+                            <div id="core-grades" style="display: flex; flex-direction: column; gap: 0.75rem;"></div>
+                        </div>
+                        <div>
+                            <h3 style="font-size: 1.1rem; margin-bottom: 1rem;">Best 3 Electives</h3>
+                            <div id="elective-grades" style="display: flex; flex-direction: column; gap: 0.75rem;">
+                            </div>
+                        </div>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; margin-top: 4rem;">
+                        <button type="button" class="secondary-btn prev-step-btn" data-prev="3">Back</button>
+                        <button type="submit" class="primary-btn" id="submit-btn">Get Recommendations</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        
+        <div id="results-section" class="hidden fade-in">
+            <div style="margin-bottom: 2rem; display: flex; justify-content: flex-end;">
+                <button class="secondary-btn exit-btn"
+                    style="background: #fee2e2; color: #991b1b; border-color: #fecaca;">Exit & Reset</button>
+            </div>
+
+            
+            <div class="card"
+                style="text-align: center; margin-bottom: 3rem; background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); color: white; padding: 3rem;">
+                <div
+                    style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; opacity: 0.8; margin-bottom: 0.5rem;">
+                    Your WASSCE Aggregate</div>
+                <div id="aggregate-value"
+                    style="font-size: 5rem; font-weight: 800; font-family: 'Outfit'; color: var(--accent); margin-bottom: 1rem;">
+                    --</div>
+                <p id="recommendation-message"
+                    style="font-size: 1.1rem; opacity: 0.9; max-width: 600px; margin: 0 auto;"></p>
+            </div>
+
+            
+            <div class="card" style="margin-bottom: 3rem; border-left: 5px solid var(--accent);">
+                <h3 style="margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                    <span>💡</span> Personalized Advice
+                </h3>
+                <p id="personalized-feedback" style="color: var(--secondary); line-height: 1.6;"></p>
+            </div>
+
+            <h2 style="margin-bottom: 2rem;">Programme Evaluation</h2>
+            <div id="ranked-results-container" class="programme-selection-grid"
+                style="max-height: none; overflow: visible;">
+                
+            </div>
+
+            <div id="fallback-suggestions" class="hidden" style="margin-top: 4rem;">
+                <h2 style="margin-bottom: 1.5rem;">Alternative Pathways</h2>
+                <div id="fallback-list" style="display: grid; gap: 1rem;"></div>
+            </div>
+
+            
+            <div id="remedial-section" class="hidden"
+                style="margin-top: 5rem; padding-top: 4rem; border-top: 2px solid #f1f5f9;">
+                <h2 style="margin-bottom: 2rem; font-size: 2rem;">Grade Improvement Support</h2>
+
+                <div style="display: grid; gap: 2rem;">
+                    
+                    <div class="card" style="background: #fff1f2; border: 1px solid #fecaca; padding: 2rem;">
+                        <h3
+                            style="color: #991b1b; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; font-size: 1.25rem;">
+                            <span style="font-size: 1.5rem;">🔹</span> Recommended Subjects for Improvement
+                        </h3>
+                        <p style="color: #b91c1c; font-size: 0.95rem; margin-bottom: 1.5rem; line-height: 1.6;">
+                            Based on your selected programmes and current grades, improving the following subjects will
+                            significantly increase your chances of admission:
+                        </p>
+                        <div id="subjects-to-improve-list" style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+                            
+                        </div>
+                    </div>
+
+                    
+                    <div class="card" style="background: #f0f9ff; border: 1px solid #bae6fd; padding: 2rem;">
+                        <h3
+                            style="color: #0369a1; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; font-size: 1.25rem;">
+                            <span style="font-size: 1.5rem;">🔹</span> Accredited Remedial Schools in <span
+                                id="remedial-region"></span>
+                        </h3>
+                        <p style="color: #075985; font-size: 0.95rem; margin-bottom: 2rem;">
+                            These recognized institutions offer targeted academic support. Find the most convenient
+                            option near you:
+                        </p>
+
+                        <div id="remedial-list" style="display: grid; gap: 2rem;">
+                            
+                        </div>
+
+                        <div
+                            style="margin-top: 2.5rem; padding: 1.5rem; background: rgba(255,255,255,0.5); border-radius: 12px; border: 1px dashed #bae6fd;">
+                            <p
+                                style="font-size: 0.85rem; color: #0369a1; font-style: italic; display: flex; align-items: center; gap: 0.5rem;">
+                                <span>ℹ️</span> District-Based Availability: Schools are organized by districts to help
+                                you identify the most convenient options.
+                            </p>
+                            <p style="margin-top: 0.5rem; font-size: 0.8rem; color: #0369a1; opacity: 0.8;">
+                                *Please verify current accreditation and admission status with the institutions
+                                directly.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer
+        style="text-align: center; padding: 4rem 0; color: var(--secondary); border-top: 1px solid #e2e8f0; background: white;">
+        <p>&copy; 2026 FutureMe Educational Systems. All rights reserved.</p>
+        <div style="margin-top: 1rem;">
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

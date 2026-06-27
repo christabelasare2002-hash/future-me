@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FutureMe - What-If Grade Simulator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <nav class="navbar glass">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo"><span class="logo-accent">Future</span>Me</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="https://upsa.edu.gh/programmes/" target="_blank">Programmes</a>
+                <a href="tool.html">Assessment</a>
+                <a href="simulator.html" class="active">Simulator</a>
+                <span id="user-display" class="user-greeting hidden"></span>
+                <a href="#" id="logout-link" class="logout-tab hidden">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="landing-hero" style="padding-bottom: 8rem;">
+        <div class="nav-container">
+            <h1 class="landing-title">What-If Grade Simulator</h1>
+            <p class="landing-subtitle">Experiment with different grade combinations to see how they impact your qualification for specific UPSA programmes.</p>
+        </div>
+    </section>
+
+    <div class="app-container">
+        <div style="display: flex; justify-content: flex-end; margin-bottom: 2rem;">
+            <a href="index.html" class="secondary-btn" style="text-decoration: none; padding: 0.5rem 1rem; font-size: 0.8rem; background: #f8fafc; color: var(--secondary); border-color: #e2e8f0;">Exit Simulator</a>
+        </div>
+
+        <div class="sim-grid">
+            
+            <div class="card fade-in">
+                <form id="simulator-form">
+                    <div class="form-group">
+                        <label>Target Programme</label>
+                        <select id="sim-programme" required>
+                            <option value="" disabled selected>Select a programme to test</option>
+                            
+                        </select>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <div class="grade-group">
+                            <h3 style="font-size: 1rem; margin-bottom: 1rem;">Core Subjects</h3>
+                            <div id="sim-core-grades" style="display: flex; flex-direction: column; gap: 0.75rem;">
+                                
+                            </div>
+                        </div>
+                        <div class="grade-group">
+                            <h3 style="font-size: 1rem; margin-bottom: 1rem;">Elective Subjects</h3>
+                            <div id="sim-elective-grades" style="display: flex; flex-direction: column; gap: 0.75rem;">
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="primary-btn" style="width: 100%; margin-top: 2rem;">
+                        <span>Simulate Results</span>
+                    </button>
+                </form>
+            </div>
+
+            
+            <div class="card fade-in" id="sim-results-card">
+                <div id="sim-placeholder" style="text-align: center; padding: 4rem 2rem;">
+                    <div style="font-size: 4rem; margin-bottom: 1rem;">🧪</div>
+                    <h3>Ready to Simulate</h3>
+                    <p style="color: var(--secondary);">Enter your hypothetical grades and select a programme to see the outcome.</p>
+                </div>
+
+                <div id="sim-results-content" class="hidden">
+                    <div class="aggregate-display" style="padding: 2rem;">
+                        <span class="step-label">Simulated Aggregate</span>
+                        <div class="aggregate-value" id="sim-aggregate">--</div>
+                    </div>
+
+                    <div id="sim-status-box" style="padding: 1.5rem; border-radius: 16px; margin-bottom: 1.5rem; text-align: center;">
+                        <h3 id="sim-status-text">--</h3>
+                    </div>
+
+                    <div class="card" style="padding: 1.5rem; box-shadow: none; border: 1px solid #e2e8f0;">
+                        <h4 style="margin-bottom: 0.5rem;">Explanation</h4>
+                        <p id="sim-explanation" style="color: var(--secondary); font-size: 0.95rem;"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer style="text-align: center; padding: 4rem 0; color: var(--secondary); border-top: 1px solid #e2e8f0; background: white;">
+        <p>&copy; 2026 FutureMe Educational Systems. All rights reserved.</p>
+        <div style="margin-top: 1rem;">
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <script src="simulator.js"></script>
+</body>
+</html>

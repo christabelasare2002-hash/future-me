@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FutureMe - Discover Your UPSA Path</title>
+    <meta name="description" content="Intelligent recommendation engine for UPSA programmes.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    
+    <nav class="navbar glass">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo"><span class="logo-accent">Future</span>Me</a>
+            <div class="nav-links">
+                <a href="index.html" class="active">Home</a>
+                <a href="https://upsa.edu.gh/programmes/" target="_blank">Programmes</a>
+                <a href="simulator.html">Simulator</a>
+                <a href="#about">About</a>
+                <span id="user-display" class="user-greeting hidden"></span>
+                <a href="#" id="logout-link" class="logout-tab hidden">Logout</a>
+                <a href="#registration" class="nav-cta" id="open-registration">Get Started</a>
+            </div>
+        </div>
+    </nav>
+
+    
+    <section class="landing-hero" id="home">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="landing-title">Your Future Starts <span class="logo-accent">Here.</span></h1>
+                <p class="landing-subtitle">Discover the perfect UPSA programme tailored to your results. Our intelligent engine simplifies your university journey.</p>
+                <div class="hero-buttons">
+                    <button class="primary-btn" id="hero-get-started"
+                        style="padding: 1.25rem 2.5rem; font-size: 1.1rem;">Take Assessment</button>
+                    <a href="simulator.html" class="secondary-btn"
+                        style="text-decoration: none; display: flex; align-items: center; border: none; background: rgba(255,255,255,0.1); color: white; backdrop-filter: blur(5px);">Try
+                        Simulator</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="/Gabriel-Abbey.jpg" alt="Graduate Student" />
+            </div>
+        </div>
+    </section>
+
+    
+    <div class="app-container" id="about">
+        <div class="card" style="text-align: center; margin-top: 2rem;">
+            <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">Empowering Your Choice</h2>
+            <p style="color: var(--secondary); max-width: 800px; margin: 0 auto 3rem; font-size: 1.1rem;">
+                FutureMe combines advanced data analysis with official UPSA entry requirements to provide you with the
+                most accurate programme recommendations.
+            </p>
+            <div
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; text-align: left;">
+                <div style="padding: 2rem; background: #f8fafc; border-radius: var(--radius-md);">
+                    <div style="font-size: 2rem; margin-bottom: 1rem;">🎯</div>
+                    <h3 style="margin-bottom: 0.5rem;">Accurate Matching</h3>
+                    <p style="color: var(--secondary); font-size: 0.9rem;">We use precise cut-off aggregates and
+                        prerequisite checks.</p>
+                </div>
+                <div style="padding: 2rem; background: #f8fafc; border-radius: var(--radius-md);">
+                    <div style="font-size: 2rem; margin-bottom: 1rem;">🛤️</div>
+                    <h3 style="margin-bottom: 0.5rem;">Remedial Mapping</h3>
+                    <p style="color: var(--secondary); font-size: 0.9rem;">Get suggestions for accredited remedial
+                        schools near you.</p>
+                </div>
+                <div style="padding: 2rem; background: #f8fafc; border-radius: var(--radius-md);">
+                    <div style="font-size: 2rem; margin-bottom: 1rem;">👨‍🎓</div>
+                    <h3 style="margin-bottom: 0.5rem;">Mature Entry</h3>
+                    <p style="color: var(--secondary); font-size: 0.9rem;">Tailored guidance for candidates 25 years and
+                        older.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div id="registration-modal" class="modal hidden">
+        <div class="modal-content card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                <h2 style="margin: 0;">Get Started</h2>
+                <button id="close-modal"
+                    style="background: none; border: none; font-size: 2rem; cursor: pointer; color: var(--secondary);">&times;</button>
+            </div>
+
+            <div id="registration-form">
+                <div id="user-details-inputs">
+                    <p style="color: var(--secondary); margin-bottom: 2rem;">Enter your details to receive your access
+                        token.</p>
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" id="reg-name" placeholder="Kofi Owusu">
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" id="reg-email" placeholder="kofi@example.com">
+                    </div>
+                </div>
+
+                <div id="token-input-section" class="hidden"
+                    style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #e2e8f0;">
+                    <div class="form-group">
+                        <label>Verification Token</label>
+                        <input type="text" id="verify-token" placeholder="UPSA-XXXXXX"
+                            style="text-align: center; letter-spacing: 4px; font-weight: 800;">
+                    </div>
+                    <div id="reg-error" class="hidden"
+                        style="color: var(--error); font-size: 0.85rem; margin-bottom: 1rem; text-align: center;"></div>
+                    <button id="verify-btn" class="primary-btn" style="width: 100%;">Verify & Continue</button>
+                    <button id="next-btn" class="hidden" style="width: 100%; margin-top: 1rem;" disabled>Next</button>
+                    <div style="text-align: center; margin-top: 1rem;">
+                        <a href="#" id="back-to-reg-link"
+                            style="color: var(--secondary); font-size: 0.8rem; text-decoration: none;">← New
+                            Registration</a>
+                    </div>
+                </div>
+
+                <div id="registration-actions"
+                    style="margin-top: 2rem; display: flex; flex-direction: column; align-items: center; gap: 1rem;">
+                    <button id="get-token-btn" class="primary-btn" style="width: 100%;">Generate Token</button>
+                    <a href="#" id="returning-user-link"
+                        style="color: var(--accent); font-size: 0.85rem; font-weight: 600; text-decoration: none;">Already
+                        have a token? Verify here</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer
+        style="text-align: center; padding: 4rem 0; color: var(--secondary); border-top: 1px solid #e2e8f0; background: white;">
+        <p>&copy; 2026 FutureMe Educational Systems. All rights reserved.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
