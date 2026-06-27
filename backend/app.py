@@ -395,30 +395,53 @@ def export_csv():
         download_name=f'UPSA_Assessment_Report_{datetime.datetime.now().strftime("%Y%m%d")}.csv'
     )
 
+_migration_status = {"running": False, "done": False, "error": None}
+
 @app.route('/api/db-migrate')
 def run_migration():
     secret = request.args.get('secret')
     if secret != os.getenv('MIGRATE_SECRET', 'futureme-migrate-2026'):
         return jsonify({"error": "Unauthorized"}), 401
-    try:
-        import subprocess, sys
-        result = subprocess.run(
-            [sys.executable, 'migrate_data.py'],
-            capture_output=True, text=True, timeout=90
-        )
-        if result.returncode == 0:
-            return jsonify({
-                "success": True,
-                "message": "🎉 Migration completed successfully!",
-                "output": result.stdout
-            })
-        else:
-            return jsonify({
-                "success": False,
-                "error": result.stderr or result.stdout
-            }), 500
-    except Exception as e:
-        return jsonify({"success": False, "error": str(e)}), 500
+
+    if _migration_status["running"]:
+        return jsonify({"message": "Migration already in progress, please wait..."}), 202
+
+    if _migration_status["done"] and not _migration_status["error"]:
+        return jsonify({"success": True, "message": "🎉 Migration already completed successfully!"})
+
+    def do_migrate():
+        _migration_status["running"] = True
+        _migration_status["done"] = False
+        _migration_status["error"] = None
+        try:
+            from migrate_data import seed_data
+            with app.app_context():
+                seed_data()
+            _migration_status["done"] = True
+        except Exception as e:
+            _migration_status["error"] = str(e)
+            print(f"❌ Migration failed: {e}")
+        finally:
+            _migration_status["running"] = False
+
+    t = threading.Thread(target=do_migrate, daemon=True)
+    t.start()
+
+    return jsonify({
+        "success": True,
+        "message": "✅ Migration started in background. Visit /api/db-migrate/status to check progress."
+    })
+
+@app.route('/api/db-migrate/status')
+def migration_status():
+    if _migration_status["running"]:
+        return jsonify({"status": "running", "message": "Migration is in progress..."})
+    elif _migration_status["done"] and not _migration_status["error"]:
+        return jsonify({"status": "done", "message": "🎉 Migration completed successfully!"})
+    elif _migration_status["error"]:
+        return jsonify({"status": "error", "error": _migration_status["error"]}), 500
+    else:
+        return jsonify({"status": "idle", "message": "No migration has been run yet."})
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
