@@ -319,6 +319,30 @@ def check_auth():
         })
     return jsonify({"authenticated": False}), 401
 
+def admin_required(f):
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        if not session.get('admin_authenticated'):
+            return jsonify({"error": "Unauthorized"}), 401
+        return f(*args, **kwargs)
+    return decorated_function
+
+@app.route('/api/admin/login', methods=['POST'])
+def admin_login():
+    data = request.json
+    username = data.get('username')
+    password = data.get('password')
+    
+    expected_username = os.getenv("ADMIN_USERNAME", "admin")
+    expected_password = os.getenv("ADMIN_PASSWORD", "UPSA_FutureMe_Admin_2026")
+    
+    if username == expected_username and password == expected_password:
+        session.permanent = True
+        session['admin_authenticated'] = True
+        return jsonify({"success": True, "message": "Login successful"})
+    else:
+        return jsonify({"error": "Invalid username or password"}), 401
+
 @app.route('/api/locations', methods=['GET'])
 def get_locations():
     regions = Region.query.all()
@@ -430,6 +454,7 @@ def simulate():
     return jsonify(result)
 
 @app.route('/api/admin/analytics', methods=['GET'])
+@admin_required
 def get_analytics():
     assessments = Assessment.query.all()
     
@@ -475,6 +500,7 @@ def get_analytics():
     return jsonify(analytics)
 
 @app.route('/api/admin/users', methods=['GET'])
+@admin_required
 def get_users():
     assessments = Assessment.query.order_by(Assessment.timestamp.desc()).all()
     user_list = []
@@ -501,6 +527,7 @@ def get_users():
     return jsonify(user_list)
 
 @app.route('/api/admin/export/csv', methods=['GET'])
+@admin_required
 def export_csv():
     assessments = Assessment.query.order_by(Assessment.timestamp.desc()).all()
     output = io.StringIO()
