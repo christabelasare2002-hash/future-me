@@ -449,10 +449,17 @@ document.addEventListener('DOMContentLoaded', async () => {
 
             try {
                 const res = await secureFetch(`${API_URL}/recommend`, { method: 'POST', body: payload });
+                if (!res.ok) {
+                    const errData = await res.json().catch(() => ({}));
+                    console.error("❌ Recommendation error:", errData);
+                    alert(errData.error || "Failed to process recommendations. Your session may have expired.");
+                    return;
+                }
                 const data = await res.json();
                 displayResults(data);
             } catch (err) { 
-                alert("Error connecting to server."); 
+                console.error("❌ Network error:", err);
+                alert("Error connecting to server. Please check your internet connection."); 
             } finally { 
                 submitBtn.disabled = false; 
                 submitBtn.textContent = "Get Recommendations"; 
