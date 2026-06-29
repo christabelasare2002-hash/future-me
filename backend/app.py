@@ -71,20 +71,19 @@ SENDGRID_API_KEY = os.getenv("SENDGRID_API_KEY")
 SENDGRID_FROM_EMAIL = os.getenv("SENDGRID_FROM_EMAIL", SMTP_USERNAME)
 
 def send_real_email(to_email, token, name):
-    body_text = f"""
-    Hello {name},
-    
-    Thank you for starting your FutureMe assessment. 
-    Your unique access token is: {token}
-    
-    Rules:
-    - Each token can be used for up to 3 assessments.
-    
-    Start your assessment here: https://future-me-steel.vercel.app
-    
-    Good luck!
-    The FutureMe Team
-    """
+    body_text = f"""Hello {name},
+
+Thank you for starting your FutureMe assessment. 
+
+Your unique access token is: {token}
+
+Rules:
+- Each token can be used for up to 3 assessments.
+
+Start your assessment here: https://future-me-steel.vercel.app
+
+Good luck!
+The FutureMe Team"""
 
     # If SendGrid is configured, use it to bypass SMTP port blocking
     if SENDGRID_API_KEY:
