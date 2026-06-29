@@ -92,8 +92,23 @@ document.addEventListener('DOMContentLoaded', async () => {
     navDashboard.onclick = showDashboard;
     navUsers.onclick = showUsers;
 
-    const downloadReport = () => {
-        window.location.href = `${API_URL}/admin/export/csv`;
+    const downloadReport = async () => {
+        try {
+            const res = await fetch(`${API_URL}/admin/export/csv`, { credentials: 'include' });
+            if (!res.ok) throw new Error("Failed to export CSV. Please ensure you are logged in.");
+            
+            const blob = await res.blob();
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `futureme_assessments_${new Date().toISOString().slice(0,10)}.csv`;
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
+            window.URL.revokeObjectURL(url);
+        } catch (err) {
+            alert("Error exporting CSV: " + err.message);
+        }
     };
 
     document.getElementById('generate-report-btn').onclick = downloadReport;
