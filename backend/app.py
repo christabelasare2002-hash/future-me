@@ -492,7 +492,10 @@ def get_users():
                 "district": a.district,
                 "highSchool": a.high_school,
                 "is_qualified": a.is_qualified,
-                "aggregate": a.aggregate
+                "aggregate": a.aggregate,
+                "coreGrades": [f"{g.subject}:{g.grade}" for g in a.grades if g.is_core],
+                "electiveGrades": [f"{g.subject}:{g.grade}" for g in a.grades if not g.is_core],
+                "selectedProgrammes": [r.programme_id for r in a.results]
             }
         })
     return jsonify(user_list)
