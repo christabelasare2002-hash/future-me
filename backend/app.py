@@ -66,7 +66,72 @@ SMTP_PORT = int(os.getenv("SMTP_PORT", 587))
 SMTP_USERNAME = os.getenv("SMTP_USERNAME")
 SMTP_PASSWORD = os.getenv("SMTP_PASSWORD")
 
+# SendGrid credentials
+SENDGRID_API_KEY = os.getenv("SENDGRID_API_KEY")
+SENDGRID_FROM_EMAIL = os.getenv("SENDGRID_FROM_EMAIL", SMTP_USERNAME)
+
 def send_real_email(to_email, token, name):
+    body_text = f"""
+    Hello {name},
+    
+    Thank you for starting your FutureMe assessment. 
+    Your unique access token is: {token}
+    
+    Rules:
+    - Each token can be used for up to 3 assessments.
+    
+    Start your assessment here: https://future-me-steel.vercel.app
+    
+    Good luck!
+    The FutureMe Team
+    """
+
+    # If SendGrid is configured, use it to bypass SMTP port blocking
+    if SENDGRID_API_KEY:
+        print(f"📡 Sending email to {to_email} via SendGrid API...")
+        try:
+            import urllib.request
+            import json
+            
+            url = "https://api.sendgrid.com/v3/mail/send"
+            data = {
+                "personalizations": [{
+                    "to": [{"email": to_email}]
+                }],
+                "from": {
+                    "email": SENDGRID_FROM_EMAIL or "christabelasare2002@gmail.com",
+                    "name": "FutureMe UPSA"
+                },
+                "subject": "Your FutureMe Assessment Token",
+                "content": [{
+                    "type": "text/plain",
+                    "value": body_text
+                }]
+            }
+            
+            req = urllib.request.Request(
+                url,
+                data=json.dumps(data).encode("utf-8"),
+                headers={
+                    "Authorization": f"Bearer {SENDGRID_API_KEY}",
+                    "Content-Type": "application/json"
+                },
+                method="POST"
+            )
+            
+            with urllib.request.urlopen(req, timeout=10) as response:
+                status_code = response.getcode()
+                if status_code in [200, 202]:
+                    print(f"✅ Email successfully sent via SendGrid to {to_email}")
+                    return True
+                else:
+                    print(f"❌ SendGrid returned status code {status_code}")
+                    return False
+        except Exception as e:
+            print(f"❌ Failed to send email via SendGrid: {e}")
+            return False
+
+    # SMTP fallback
     if not SMTP_USERNAME or not SMTP_PASSWORD or SMTP_PASSWORD == "your-app-password":
         print("⚠️ SMTP credentials not configured. Skipping real email dispatch.")
         return False
@@ -76,22 +141,7 @@ def send_real_email(to_email, token, name):
         msg['From'] = f"FutureMe UPSA <{SMTP_USERNAME}>"
         msg['To'] = to_email
         msg['Subject'] = "Your FutureMe Assessment Token"
-        
-        body = f"""
-        Hello {name},
-        
-        Thank you for starting your FutureMe assessment. 
-        Your unique access token is: {token}
-        
-        Rules:
-        - Each token can be used for up to 3 assessments.
-        
-        Start your assessment here: https://future-me-steel.vercel.app
-        
-        Good luck!
-        The FutureMe Team
-        """
-        msg.attach(MIMEText(body, 'plain'))
+        msg.attach(MIMEText(body_text, 'plain'))
         
         print(f"📡 Attempting to send email to {to_email} via {SMTP_SERVER}:{SMTP_PORT}...")
         server = smtplib.SMTP(SMTP_SERVER, SMTP_PORT, timeout=10)
@@ -122,6 +172,60 @@ def test_email():
     secret = request.args.get('secret')
     if secret != os.getenv('MIGRATE_SECRET', 'futureme-migrate-2026'):
         return jsonify({"error": "Unauthorized"}), 401
+
+    if SENDGRID_API_KEY:
+        print("📡 Performing SendGrid connectivity check...")
+        try:
+            import urllib.request
+            import json
+            url = "https://api.sendgrid.com/v3/mail/send"
+            data = {
+                "personalizations": [{
+                    "to": [{"email": SENDGRID_FROM_EMAIL or "christabelasare2002@gmail.com"}]
+                }],
+                "from": {
+                    "email": SENDGRID_FROM_EMAIL or "christabelasare2002@gmail.com",
+                    "name": "FutureMe Diagnostic Test"
+                },
+                "subject": "FutureMe SendGrid Diagnostic Connection Test",
+                "content": [{
+                    "type": "text/plain",
+                    "value": "This is a connection diagnostic test from your FutureMe application hosted on Render. SendGrid API is configured and operational."
+                }]
+            }
+            
+            req = urllib.request.Request(
+                url,
+                data=json.dumps(data).encode("utf-8"),
+                headers={
+                    "Authorization": f"Bearer {SENDGRID_API_KEY}",
+                    "Content-Type": "application/json"
+                },
+                method="POST"
+            )
+            
+            with urllib.request.urlopen(req, timeout=10) as response:
+                status_code = response.getcode()
+                if status_code in [200, 202]:
+                    return jsonify({
+                        "success": True,
+                        "provider": "SendGrid",
+                        "message": f"✅ SendGrid connection and test dispatch successful! Check inbox of {SENDGRID_FROM_EMAIL or 'christabelasare2002@gmail.com'}"
+                    })
+                else:
+                    return jsonify({
+                        "success": False,
+                        "provider": "SendGrid",
+                        "error": f"SendGrid API returned status {status_code}"
+                    }), 500
+        except Exception as e:
+            return jsonify({
+                "success": False,
+                "provider": "SendGrid",
+                "error": str(e)
+            }), 500
+
+    # SMTP fallback diagnostic
     try:
         import smtplib
         server = smtplib.SMTP(SMTP_SERVER, SMTP_PORT, timeout=15)
@@ -132,6 +236,7 @@ def test_email():
         server.quit()
         return jsonify({
             "success": True,
+            "provider": "SMTP",
             "smtp_server": SMTP_SERVER,
             "smtp_port": SMTP_PORT,
             "smtp_username": SMTP_USERNAME,
@@ -140,6 +245,7 @@ def test_email():
     except Exception as e:
         return jsonify({
             "success": False,
+            "provider": "SMTP",
             "smtp_server": SMTP_SERVER,
             "smtp_port": SMTP_PORT,
             "smtp_username": SMTP_USERNAME,
